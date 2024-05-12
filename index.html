@@ -1,0 +1,32 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pao Labs</title>
+</head>
+
+<body>
+    <h1>Ready to Power Your Performance?</h1>
+    <form id="emailForm">
+        <input type="email" id="email" placeholder="Enter your email" required>
+        <button type="submit">Sign Up</button>
+    </form>
+    <script>
+        document.getElementById('emailForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            fetch('https://script.google.com/macros/s/AKfycbztJHfgxV4MVD8QtdmO4Rk8e3IKkSLdz20TZ53Pm9_Bqocd9cM8gujfXO8xxs4neS-Hzg/exec', {
+                method: 'POST',
+                body: JSON.stringify({ email: document.getElementById('email').value }),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+                .then(response => response.json())
+                .then(data => console.log('Success:', data))
+                .catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+
+</html>
