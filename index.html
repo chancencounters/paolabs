@@ -4,20 +4,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pao Labs</title>
+    <style>
+        body {
+            margin: 0;
+            /* Remove default margin provided by the browser */
+            height: 100vh;
+            /* Make the body take the full height of the viewport */
+            background-position: center;
+            /* Center the background image */
+            background-repeat: no-repeat;
+            /* Do not repeat the background image */
+            background-size: cover;
+            /* Scale the image to cover the entire body without stretching */
+            display: flex;
+            align-items: center;
+            /* Align content vertically center */
+            justify-content: center;
+            /* Align content horizontally center */
+            text-align: center;
+            /* Ensure text is centered */
+            font-family: Arial, sans-serif;
+            /* Optional: sets a nice sans-serif font */
+        }
+
+        form {
+            background: rgba(255, 255, 255, 0.8);
+            /* Add a white semi-transparent background to the form */
+            padding: 20px;
+            border-radius: 8px;
+            /* Rounded corners for the form */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            /* Soft shadow for 3D effect */
+        }
+
+        input[type="email"],
+        button {
+            padding: 10px;
+            margin: 10px 0;
+            /* Add some space around the input and button */
+            width: 250px;
+            /* Set a specific width */
+            border: 2px solid #ccc;
+            /* Add a border to the inputs */
+            border-radius: 4px;
+            /* Rounded corners for the inputs and button */
+        }
+
+        button {
+            cursor: pointer;
+            /* Indicates that a button is clickable */
+            background-color: #007BFF;
+            /* A nice blue background color */
+            color: white;
+            /* Text color of the button */
+            border: none;
+            /* Remove border from the button */
+        }
+
+        button:hover {
+            background-color: #0056b3;
+            /* Darker shade when hovered */
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Ready to Power Your Performance?</h1>
-    <form id="emailForm">
-        <input type="email" id="email" placeholder="Enter your email" required>
-        <button type="submit">Sign Up</button>
-    </form>
+    <div>
+        <h1>Ready to Power Your Performance?</h1>
+        <form id="emailForm">
+            <input type="email" id="email" placeholder="Enter your email" required>
+            <button type="submit">Sign Up</button>
+        </form>
+    </div>
     <script>
+        // JavaScript to randomly select a background image
+        document.addEventListener("DOMContentLoaded", function () {
+            var images = ['landing_page_1.png', 'landing_page_2.png', 'landing_page_3.png'];
+            var chosenImage = images[Math.floor(Math.random() * images.length)];
+            document.body.style.backgroundImage = 'url(' + chosenImage + ')';
+        });
+
         document.getElementById('emailForm').addEventListener('submit', function (event) {
             event.preventDefault();
             fetch('https://script.google.com/macros/s/AKfycbw0_3SFf7Ix9UAO6CJyA5eZPR-ueDRbs9RUY9S-sUsrD2BYgPILaXVoq_AwGA82mrztvw/exec', {
                 method: 'POST',
-                mode: 'no-cors',
                 body: JSON.stringify({ email: document.getElementById('email').value }),
                 headers: {
                     'Content-Type': 'application/json'
