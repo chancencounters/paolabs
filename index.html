@@ -42,8 +42,7 @@
             align-items: center;
             padding: 10px;
             width: 100%;
-            top: 10px;
-            right: 5px;
+            margin-top: 5px;
         }
 
         .nav-links a {
@@ -64,6 +63,17 @@
             height: 30px;
         }
 
+        .mainBody {
+            position: absolute;
+            /* Positioning the button absolutely within the body */
+            top: 50%;
+            /* Centering vertically */
+            left: 50%;
+            /* Centering horizontally */
+            transform: translate(-50%, -50%);
+            /* Adjusts the button to be exactly centered */
+        }
+
 
         #logo {
             /* position: absolute; */
@@ -75,10 +85,14 @@
         }
 
         input[type="email"]::placeholder {
-            color: #aaa; /* Light gray placeholder text */
-            font-style: 'italic'; /* Italicize the placeholder text */
-            font-family: 'Lexend', Arial, sans-serif; /* Specify a font for the placeholder */
-            opacity: 1; /* Full opacity */
+            color: #aaa;
+            /* Light gray placeholder text */
+            font-style: 'italic';
+            /* Italicize the placeholder text */
+            font-family: 'Lexend', Arial, sans-serif;
+            /* Specify a font for the placeholder */
+            opacity: 1;
+            /* Full opacity */
         }
 
         #pill-container {
@@ -134,7 +148,7 @@
             <a href="http://www.instagram.com/paolabsjelly">INSTAGRAM</a>
         </div>
     </div>
-    <div>
+    <div className="main-body">
         <h1>Sign up for the latest news on our product and where we'll be sampling next!</h1>
         <form id="pill-container">
             <input type="email" id="pill-input" placeholder="Enter your email" required>
