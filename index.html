@@ -75,7 +75,7 @@
             /* Responsive width */
             max-width: 500px;
             /* Maximum width */
-            border: 3px solid white;
+            /* border: 3px solid white; */
             border-radius: 999px;
             margin: 20px;
             /* Added margin for better spacing */
@@ -83,13 +83,21 @@
             /* Center items vertically within the pill-container */
         }
 
-        #pill-input,
+        #pill-input {
+            border: 2px solid white;
+            border-radius: 20px;
+        }
+
         #pill-button {
             flex: 1;
             height: 50px;
             /* Increased height for better interaction */
             font-size: 1rem;
             /* Responsive font size */
+            background-color: white;
+            color: transparent;
+            border: 2px solid white;
+            border-radius: 20px;
         }
 
         @media (max-width: 600px) {
