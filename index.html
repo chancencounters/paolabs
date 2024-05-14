@@ -110,50 +110,6 @@
             border-bottom-right-radius: 20px;
         }
 
-        .mobile-input-component {
-            display: block;
-        }
-
-        #mobile-pill-container {
-            display: flex;
-            width: 90%;
-            /* Responsive width */
-            max-width: 500px;
-            /* Maximum width */
-            /* border: 3px solid white; */
-            border-radius: 999px;
-            margin: 20px;
-            /* Added margin for better spacing */
-            align-items: center;
-            /* Center items vertically within the pill-container */
-        }
-
-        #mobile-pill-input {
-            flex: .7;
-            height: 50px;
-            border: 2px solid white;
-            border-radius: 20px;
-            font-weight: bold;
-            font-size: large;
-            color: black;
-            background: transparent;
-
-        }
-
-        #mobile-pill-button {
-            flex: .2;
-            height: 50px;
-            /* Increased height for better interaction */
-            font-size: 1.2rem;
-            /* Responsive font size */
-            background-color: white;
-            color: lightskyblue;
-            font-weight: bold;
-            border: 2px solid white;
-            border-radius: 20px;
-
-        }
-
         @media (max-width: 600px) {
             h1 {
                 font-size: 1.5rem;
@@ -161,14 +117,6 @@
 
             .nav-links a {
                 font-size: 0.9rem;
-            }
-
-            .mobile {
-                display: none;
-            }
-
-            .desktop {
-                display: block;
             }
         }
     </style>
@@ -188,13 +136,6 @@
         <form id="pill-container">
             <input type="email" id="pill-input" placeholder="Enter your email" required>
             <button type="submit" id="pill-button">Sign Up</button>
-        </form>
-    </div>
-    <div class="mobile-input-component">
-        <h1>Sign up for the latest news on our product and where we'll be sampling next!</h1>
-        <form id="mobile-pill-container">
-            <input type="email" id="mobile-pill-input" placeholder="Enter your email" required><br><br>
-            <button type="submit" id="mobile-pill-button">Sign Up</button>
         </form>
     </div>
     <script>
