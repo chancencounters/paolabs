@@ -72,6 +72,13 @@
             /* width: auto; */
         }
 
+        input[type="email"]::placeholder {
+            color: #aaa; /* Light gray placeholder text */
+            font-style: 'italic'; /* Italicize the placeholder text */
+            font-family: 'Lexend', Arial, sans-serif; /* Specify a font for the placeholder */
+            opacity: 1; /* Full opacity */
+        }
+
         #pill-container {
             display: flex;
             width: 30em;
@@ -86,7 +93,7 @@
             border: none;
             height: 20px;
             padding: 30px;
-            color: white;
+            color: rgba(159, 224, 243);
             font-size: 20px;
         }
 
@@ -97,11 +104,12 @@
             height: inherit;
             padding: 0 15px;
             cursor: pointer;
-            color: transparent;
+            color: rgba(159, 224, 243);
             text-shadow: 0 0 0 black;
             /* Trick to display text */
             transition: color 0.3s;
             font-size: 20px;
+            font-weight: bold;
         }
 
         #pill-button:hover {
