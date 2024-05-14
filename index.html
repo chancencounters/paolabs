@@ -10,12 +10,12 @@
             /* Remove default margin provided by the browser */
             height: 100vh;
             /* Make the body take the full height of the viewport */
-            background-position: center;
+            background-position: center center;
             /* Center the background image */
             background-repeat: no-repeat;
             /* Do not repeat the background image */
-            background-size: cover;
-            /* Scale the image to cover the entire body without stretching */
+            background-size: contain;
+            /* Change this to 'contain' to see the whole image */
             display: flex;
             align-items: center;
             /* Align content vertically center */
@@ -25,6 +25,16 @@
             /* Ensure text is centered */
             font-family: Arial, sans-serif;
             /* Optional: sets a nice sans-serif font */
+        }
+
+        /* Logo style */
+        #logo {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            height: 50px;
+            /* Adjust based on your logo size */
+            width: auto;
         }
 
         form {
@@ -69,6 +79,7 @@
 </head>
 
 <body>
+    <img id="logo" src="logo_green_black.png" alt="Pao Labs Logo">
     <div>
         <h1>Ready to Power Your Performance?</h1>
         <form id="emailForm">
