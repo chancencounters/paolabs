@@ -56,6 +56,18 @@
             /* Increased padding for better tap targets */
         }
 
+        div {
+            /* This targets the div containing your form */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Take up remaining space */
+        }
+
         #logo {
             max-height: 10vh;
             /* Responsive logo height */
@@ -72,6 +84,7 @@
             border-radius: 999px;
             margin: 20px;
             /* Added margin for better spacing */
+            align-items: center; /* Center items vertically within the pill-container */
         }
 
         #pill-input,
@@ -98,6 +111,7 @@
 <body>
     <div class="header">
         <img id="logo" src="logo_green_white.png" alt="Pao Labs Logo">
+        <br><br>
         <div class="nav-links">
             <a href="#">ABOUT US</a>
             <a href="#">CONTACT US</a>
