@@ -53,7 +53,7 @@
             /* White border around the form */
         }
 
-        input[type="email"],
+        /* input[type="email"],
         button {
             padding: 10px;
             margin: 10px 0;
@@ -85,6 +85,42 @@
             background-color: #eee;
             /* Light grey color on hover */
             color: black;
+        } */
+
+        .pill-container {
+            display: flex;
+            width: 30em;
+            border: 3px solid white;
+            border-radius: 999px; /* Large border-radius to create pill shape */
+        }
+
+        .pill-input {
+            flex: 1;
+            background-color: transparent;
+            border: none;
+            height: 20px;
+            padding: 5px 10px;
+            color: white;
+        }
+
+        .pill-button {
+            background-color: white;
+            border: none;
+            border-radius: 999px;
+            height: 28px; /* Adjust for border height */
+            padding: 0 15px;
+            cursor: pointer;
+            color: transparent;
+            text-shadow: 0 0 0 black; /* Trick to display text */
+            transition: color 0.3s;
+        }
+
+        .pill-button:hover {
+            color: black;
+        }
+
+        .pill-input:focus, .pill-button:focus {
+            outline: none;
         }
     </style>
 </head>
@@ -93,9 +129,9 @@
     <img id="logo" src="logo_green_white.png" alt="Pao Labs Logo">
     <div>
         <h1>Sign up for the latest news on our product and where we'll be sampling next!</h1>
-        <form id="emailForm">
-            <input type="email" id="email" placeholder="Enter your email" required>
-            <button type="submit">Sign Up</button>
+        <form id="pill-container">
+            <input type="email" id="pill-input" placeholder="Enter your email" required>
+            <button type="submit" id="pill-button">Sign Up</button>
         </form>
     </div>
     <script>
