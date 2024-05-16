@@ -8,6 +8,7 @@
     <title>Pao Labs</title>
     <style>
         body {
+            background-image: url("landing_page_3");
             margin: 0;
             height: 100vh;
             background-position: bottom;
@@ -21,25 +22,19 @@
         }
 
         .header {
-            /* position: absolute; */
             top: 0;
             left: 0;
-            /* width: 100%; */
             z-index: 1000;
             padding: 10px;
             justify-content: center;
-            /* Center everything in the header horizontally */
             flex-direction: column;
-            /* Stack children elements vertically */
             text-align: center;
-            /* Center align the text for all child elements */
         }
 
         .nav-links a {
             text-decoration: none;
             color: white;
             padding: 10px;
-            /* Increased padding for better tap targets */
         }
 
         .input-component {
@@ -55,12 +50,10 @@
             color: white;
             padding: 1rem;
             font-size: 2rem;
-            /* Responsive font size */
         }
 
         #logo {
             max-height: 10vh;
-            /* Responsive logo height */
             width: auto;
             margin-bottom: 10px;
         }
@@ -68,15 +61,10 @@
         #pill-container {
             display: flex;
             width: 90%;
-            /* Responsive width */
             max-width: 500px;
-            /* Maximum width */
-            /* border: 3px solid white; */
             border-radius: 999px;
             margin: 20px;
-            /* Added margin for better spacing */
             align-items: center;
-            /* Center items vertically within the pill-container */
             font-family: 'Lexend';
         }
 
@@ -97,9 +85,7 @@
         #pill-button {
             flex: .2;
             height: 56px;
-            /* Increased height for better interaction */
             font-size: 1.2rem;
-            /* Responsive font size */
             background-color: white;
             color: lightskyblue;
             font-weight: bold;
@@ -111,12 +97,23 @@
         ::placeholder {
             color: white;
             opacity: 1;
-            /* Firefox */
+        }
+
+        .survey-text {
+            color: white;
+            margin-top: 20px;
+            font-size: 1rem;
+        }
+
+        .survey-link {
+            margin-top: 10px;
+            font-size: 1.2rem;
         }
 
         @media (max-width: 600px) {
             body {
-                background-size: contain;
+                background-size: auto 100%;
+                background-position: -650px bottom
             }
 
             h1 {
@@ -129,19 +126,15 @@
 
             .input-component {
                 width: 80%;
-                /* Increased width on mobile */
             }
 
             #pill-container {
                 width: 100%;
-                /* Full width on mobile */
             }
 
             #pill-input {
                 height: 60px;
-                /* Increased height */
                 font-size: 1rem;
-                /* Larger font size */
                 border-top-left-radius: 30px;
                 border-bottom-left-radius: 30px;
                 padding-left: 20px;
@@ -150,13 +143,18 @@
 
             #pill-button {
                 height: 66px;
-                /* Increased height */
                 font-size: 1rem;
-                /* Larger font size */
                 padding: 0 20px;
-                /* More padding */
                 border-top-right-radius: 30px;
                 border-bottom-right-radius: 30px;
+            }
+
+            .survey-text {
+                font-size: 0.9rem;
+            }
+
+            .survey-link {
+                font-size: 1rem;
             }
         }
     </style>
@@ -166,7 +164,6 @@
     <div class="header">
         <img id="logo" src="logo_green_white.png" alt="Pao Labs Logo">
         <div class="nav-links">
-            <a href="https://forms.gle/PupA5w97UQ6uHFBFA">SURVEY</a>
             <a href="mailto:zack.yu@paolabs.com">CONTACT US</a>
             <a href="http://www.instagram.com/paolabsjelly">INSTAGRAM</a>
         </div>
@@ -177,14 +174,14 @@
             <input type="email" id="pill-input" placeholder="Enter your email" required>
             <button type="submit" id="pill-button">Sign Up</button>
         </form>
+        <div class="survey-text">
+            Click below for our product survey, if you've had the chance to sample our energy jelly!
+        </div>
+        <div class="survey-link">
+            <a href="https://forms.gle/PupA5w97UQ6uHFBFA">SURVEY</a>
+        </div>
     </div>
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            var images = ['landing_page_1.png', 'landing_page_2.png', 'landing_page_3.png'];
-            var chosenImage = images[Math.floor(Math.random() * images.length)];
-            document.body.style.backgroundImage = 'url(' + chosenImage + ')';
-        });
-
         document.getElementById('pill-container').addEventListener('submit', function (event) {
             event.preventDefault();
 
