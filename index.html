@@ -9,7 +9,7 @@
         body {
             margin: 0;
             height: 70vh;
-            background-position: center;
+            background-position: bottom;
             background-repeat: no-repeat;
             background-size: cover;
             display: flex;
@@ -186,7 +186,7 @@
             document.body.style.backgroundImage = 'url(' + chosenImage + ')';
         });
 
-        document.getElementById('emailForm').addEventListener('submit', function (event) {
+        document.getElementById('pull-container').addEventListener('submit', function (event) {
             event.preventDefault();
             fetch('https://script.google.com/macros/s/AKfycbw0_3SFf7Ix9UAO6CJyA5eZPR-ueDRbs9RUY9S-sUsrD2BYgPILaXVoq_AwGA82mrztvw/exec', {
                 method: 'POST',
