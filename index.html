@@ -162,13 +162,13 @@
     <div class="header">
         <img id="logo" src="logo_green_white.png" alt="Pao Labs Logo">
         <div class="nav-links">
-            <a href="#">ABOUT US</a>
+            <a href="https://forms.gle/PupA5w97UQ6uHFBFA">SURVEY</a>
             <a href="mailto:zack.yu@paolabs.com">CONTACT US</a>
             <a href="http://www.instagram.com/paolabsjelly">INSTAGRAM</a>
         </div>
     </div>
     <div class="input-component" id="input-component">
-        <h1 id="cta-text">Sign up for the latest news on our product and where we'll be sampling next!</h1>
+        <h1 id="cta-text">Sign up for the latest news on our energy jellies and where we'll be sampling next!</h1>
         <form id="pill-container">
             <input type="email" id="pill-input" placeholder="Enter your email" required>
             <button type="submit" id="pill-button">Sign Up</button>
@@ -202,7 +202,7 @@
             })
                 .then(response => console.log(response))
                 .then(data => {
-                    document.getElementById('input-component').innerHTML = '<h1>Thank you for signing up! Stay tuned for exciting updates on our product and where you can try our samples next. We can\'t wait to share our journey with you!</h1>';
+                    document.getElementById('input-component').innerHTML = '<h1>Thank you for signing up! Stay tuned for exciting updates on our energy jellies and where you can try our samples next. We can\'t wait to share our journey with you!</h1>';
                 })
                 .catch(error => {
                     console.error('Error:', error);
