@@ -110,10 +110,11 @@
             font-size: 1.2rem;
         }
 
-        @media (max-width: 600px) {
+        /* Media query for larger phone sizes */
+        @media (max-width: 600px) and (min-width: 321px) {
             body {
                 background-size: auto 100%;
-                background-position: -650px bottom
+                background-position: -650px bottom;
             }
 
             h1 {
@@ -156,6 +157,56 @@
 
             .survey-link {
                 font-size: 1rem;
+            }
+        }
+
+        /* Media query specifically for iPhone SE */
+        @media (max-width: 320px) {
+            body {
+                background-size: auto 100%;
+                background-position: center bottom;
+            }
+
+            h1 {
+                font-size: 1.2rem;
+            }
+
+            .nav-links a {
+                font-size: 0.8rem;
+            }
+
+            .input-component {
+                width: 90%;
+                margin-top: 5vh;
+            }
+
+            #pill-container {
+                width: 100%;
+            }
+
+            #pill-input {
+                height: 50px;
+                font-size: 0.9rem;
+                border-top-left-radius: 20px;
+                border-bottom-left-radius: 20px;
+                padding-left: 15px;
+                padding-right: 10px;
+            }
+
+            #pill-button {
+                height: 50px;
+                font-size: 0.9rem;
+                padding: 0 15px;
+                border-top-right-radius: 20px;
+                border-bottom-right-radius: 20px;
+            }
+
+            .survey-text {
+                font-size: 0.8rem;
+            }
+
+            .survey-link {
+                font-size: 0.9rem;
             }
         }
     </style>
