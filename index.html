@@ -180,23 +180,34 @@
             var chosenImage = images[Math.floor(Math.random() * images.length)];
             document.body.style.backgroundImage = 'url(' + chosenImage + ')';
         });
+        var emailInput = document.getElementById('pill-input');
+        var submitButton = document.getElementById('pill-button');
 
-        document.getElementById('pill-container').addEventListener('submit', function (event) {
-            event.preventDefault();
-            fetch('https://script.google.com/macros/s/AKfycbw0_3SFf7Ix9UAO6CJyA5eZPR-ueDRbs9RUY9S-sUsrD2BYgPILaXVoq_AwGA82mrztvw/exec', {
+        // Disable the input and button
+        emailInput.disabled = true;
+        submitButton.disabled = true;
+        submitButton.style.cursor = 'not-allowed';
+
+        fetch('https://script.google.com/macros/s/AKfycbw0_3SFf7Ix9UAO6CJyA5eZPR-ueDRbs9RUY9S-sUsrD2BYgPILaXVoq_AwGA82mrztvw/exec',
+            {
                 method: 'POST',
                 mode: 'no-cors',
-                body: JSON.stringify({ email: document.getElementById('pill-input').value }),
+                body: JSON.stringify({ email: emailInput.value }),
                 headers: {
                     'Content-Type': 'application/json'
                 }
             })
-                .then(response => console.log(response))
-                .then(data => {
-                    document.getElementById('input-component').innerHTML = '<h1>Thank you for signing up! Stay tuned for exciting updates on our product and where you can try our samples next. We can\'t wait to share our journey with you!</h1>';
-                })
-                .catch(error => console.error('Error:', error));
-        });
+            .then(response => console.log(response))
+            .then(data => {
+                document.getElementById('input-component').innerHTML = '<h1>Thank you for signing up! Stay tuned for exciting updates on our product and where you can try our samples next.We can\'t wait to share our journey with you!</h1>';
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                // Re-enable the input and button if there is an error
+                emailInput.disabled = false;
+                submitButton.disabled = false;
+                submitButton.style.cursor = 'pointer';
+            });
     </script>
 </body>
 
