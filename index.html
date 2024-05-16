@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -95,7 +96,6 @@
             color: black;
             background: transparent;
             font-family: "Lexend";
-
         }
 
         #pill-button {
@@ -146,7 +146,6 @@
                 border-bottom-left-radius: 30px;
                 padding-left: 20px;
                 padding-right: 10px;
-
             }
 
             #pill-button {
@@ -172,8 +171,8 @@
             <a href="http://www.instagram.com/paolabsjelly">INSTAGRAM</a>
         </div>
     </div>
-    <div class="input-component">
-        <h1>Sign up for the latest news on our product and where we'll be sampling next!</h1>
+    <div class="input-component" id="input-component">
+        <h1 id="cta-text">Sign up for the latest news on our product and where we'll be sampling next!</h1>
         <form id="pill-container">
             <input type="email" id="pill-input" placeholder="Enter your email" required>
             <button type="submit" id="pill-button">Sign Up</button>
@@ -186,17 +185,19 @@
             document.body.style.backgroundImage = 'url(' + chosenImage + ')';
         });
 
-        document.getElementById('pull-container').addEventListener('submit', function (event) {
+        document.getElementById('pill-container').addEventListener('submit', function (event) {
             event.preventDefault();
             fetch('https://script.google.com/macros/s/AKfycbw0_3SFf7Ix9UAO6CJyA5eZPR-ueDRbs9RUY9S-sUsrD2BYgPILaXVoq_AwGA82mrztvw/exec', {
                 method: 'POST',
-                body: JSON.stringify({ email: document.getElementById('email').value }),
+                body: JSON.stringify({ email: document.getElementById('pill-input').value }),
                 headers: {
                     'Content-Type': 'application/json'
                 }
             })
                 .then(response => response.json())
-                .then(data => console.log('Success:', data))
+                .then(data => {
+                    document.getElementById('input-component').innerHTML = '<h1>Thank you for signing up! Stay tuned for exciting updates on our product and where you can try our samples next. We can\'t wait to share our journey with you!</h1>';
+                })
                 .catch(error => console.error('Error:', error));
         });
     </script>
