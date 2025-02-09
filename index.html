@@ -4,268 +4,306 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='https://fonts.googleapis.com/css?family=Lexend' rel='stylesheet'>
-    <title>Pao Labs</title>
+    <link rel="stylesheet" href="https://use.typekit.net/zds8lvs.css">
     <style>
-        body {
-            background-image: url("landing_page_3.png");
+        body, html {
             margin: 0;
+            padding: 0;
             height: 100vh;
-            background-position: bottom;
-            background-repeat: no-repeat;
+            background-color: #FFEB66; 
+        }
+
+        .desktop_container {
+            display: flex;
+            height: 100vh;
+        }
+
+        .mobile_container {
+            display: none;
+        }
+
+        .desktop_container .left_bg_image {
+            flex: 1;
+            background: url("pao_image.png") no-repeat center;
             background-size: cover;
+        }
+
+        .desktop_container .right_content {
+            flex: 1;
             display: flex;
             flex-direction: column;
             align-items: center;
-            text-align: center;
-            font-family: 'Lexend';
-        }
-
-        .header {
-            top: 0;
-            left: 0;
-            z-index: 1000;
-            padding: 10px;
-            justify-content: center;
-            flex-direction: column;
+            justify-content: space-evenly;
             text-align: center;
         }
 
-        .nav-links a {
-            text-decoration: none;
-            color: white;
-            padding: 10px;
+        .desktop_container #cta-text {
+            font-family: sofia-pro-soft, sans-serif;
+            font-size: 46px;
+            font-weight: 700;
+            font-style: normal;
         }
 
-        .input-component {
+        .desktop_container #input-container {
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            width: 60%;
-            margin-top: 10vh;
+            font-family: sofia-pro-soft, sans-serif;            
         }
 
-        h1 {
-            color: white;
-            padding: 1rem;
-            font-size: 2rem;
+        .desktop_container #description {
+            flex: 1;
+            font-size: 18px;
+            font-weight: 400;
+            font-style: normal;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0 20px;
+            text-align: center;
+            font-family: sofia-pro-soft, sans-serif;
         }
 
-        #logo {
-            max-height: 10vh;
-            width: auto;
-            margin-bottom: 10px;
+        .desktop_container #email-input {
+            flex: 1;
+            width: 50%;
+            border-radius: 12px;
+            font-size: 16px;
+            margin-top: 34px;
+            padding: 20px;
+            box-sizing: border-box;
+            border: none;
         }
 
-        #pill-container {
+        .desktop_container #submit-button {
+            flex: 1;
+            width: 50%;
+            margin-top: 10px;   
+            margin-bottom: 20px;
+            padding: 12px;
+            font-size: 24px;
+            border-radius: 12px;
+            background-color: #74D6E7;
+            font-weight: 700;
+            border: none;
+        }
+
+        .desktop_container .social_media_icons {
             display: flex;
-            width: 90%;
-            max-width: 500px;
-            border-radius: 999px;
-            margin: 20px;
+            justify-content: center;
             align-items: center;
-            font-family: 'Lexend';
-        }
-
-        #pill-input {
-            flex: .7;
-            height: 50px;
-            border: 2px solid white;
-            border-top-left-radius: 20px;
-            border-bottom-left-radius: 20px;
-            padding-left: 20px;
-            font-weight: bold;
-            font-size: large;
-            color: white;
-            background: transparent;
-            font-family: "Lexend";
-        }
-
-        #pill-button {
-            flex: .2;
-            height: 56px;
-            font-size: 1.2rem;
-            background-color: white;
-            color: lightskyblue;
-            font-weight: bold;
-            border: 2px solid white;
-            border-top-right-radius: 20px;
-            border-bottom-right-radius: 20px;
-        }
-
-        ::placeholder {
-            color: white;
-            opacity: 1;
-        }
-
-        .survey-text {
-            color: white;
-            margin-top: 20px;
-            font-size: 1rem;
-        }
-
-        .survey-link {
+            gap: 30px;
             margin-top: 10px;
-            font-size: 1.2rem;
         }
 
-        /* Media query for larger phone sizes */
-        @media (max-width: 600px) and (min-width: 376px) {
-            body {
-                background-size: auto 100%;
-                background-position: -450px bottom;
-            }
+        .desktop_container .social_media_icons img {
+            width: 30px;
+            height: auto;
+        }
+        
 
-            h1 {
-                font-size: 1.5rem;
-            }
-
-            .nav-links a {
-                font-size: 0.9rem;
-            }
-
-            .input-component {
-                width: 80%;
-                margin-top: 0vh;
-            }
-
-            #pill-container {
+        @media (max-width: 820px) and (min-width: 300px) {
+            /* Prevents horizontal scrolling */
+            html, body {
+                overflow-x: hidden;
                 width: 100%;
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
             }
 
-            #pill-input {
-                height: 50px;
-                font-size: 1rem;
-                border-top-left-radius: 20px;
-                border-bottom-left-radius: 20px;
-                border-top-right-radius: 0px;
-                border-bottom-right-radius: 0px;
-                padding-left: 20px;
-                padding-right: 10px;
+            .desktop_container {
+                display: none;
             }
 
-            #pill-button {
-                height: 62px;
-                font-size: 1rem;
-                padding: 0 20px;
-                border-top-right-radius: 20px;
-                border-bottom-right-radius: 20px;
+            .mobile_container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                padding: 20px;
+                width: 100%;
+                max-width: 100vw;
+                box-sizing: border-box;
+                overflow-x: hidden;                
+            }
+            
+            .mobile_container img {
+                width: 100%;
+                max-width: 100%;
+                height: auto;
             }
 
-            .survey-text {
-                font-size: 0.9rem;
+            .mobile_container .bg_img {
+                width: 85%;   
+            }
+            
+            .mobile_container #logo {
+                width: 30%;
+                margin-bottom: 24px;
             }
 
-            .survey-link {
-                font-size: 1rem;
+            /* Mobile CTA Text */
+            .mobile_container #cta-text {
+                font-family: sofia-pro-soft, sans-serif;
+                font-size: 24px;
+                font-weight: 700;
+                text-align: center;
+                width: 100%; /* Prevents overflow */
+                box-sizing: border-box;
+                margin-bottom: 10px;
+            }
+
+            /* Mobile Description */
+            .mobile_container #description {
+                font-size: 14px;
+                font-weight: 400;
+                width: 90%;
+                margin-top: 0px;
+                margin-bottom: 20px;
+                padding: 0 10px;
+                text-align: center;
+                box-sizing: border-box;
+                font-family: sofia-pro-soft, sans-serif;
+            }
+
+            /* Mobile Email Input */
+            .mobile_container #email-input {
+                width: 90%;
+                max-width: 400px;
+                height: 60px;
+                border-radius: 10px;
+                font-size: 16px;
+                padding: 15px;
+                box-sizing: border-box;
+                border: none;
+            }
+
+            /* Mobile Submit Button */
+            .mobile_container #submit-button {
+                width: 90%;
+                max-width: 400px;
+                height: 60px;
+                margin-top: 10px;
+                font-size: 18px;
+                font-weight: 700;
+                border-radius: 10px;
+                background-color: #74D6E7;
+                border: none;
+                box-sizing: border-box;
+            }
+
+            /* Mobile Social Media Icons */
+            .mobile_container .social_media_icons {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 15px;
+                margin-top: 20px;
+                width: 100%;
+                box-sizing: border-box;
+                flex-wrap: wrap; /* Ensures wrapping instead of overflow */
+            }
+
+            .mobile_container .social_media_icons img {
+                width: 25px;
+                height: auto;
+                max-width: 100%; /* Ensures images don’t exceed screen */
             }
         }
+
 
         /* Media query specifically for iPhone SE */
         @media (max-width: 375px) {
-            body {
-                background-size: auto 100%;
-                background-position: center bottom;
-            }
-
-            h1 {
-                font-size: 1.2rem;
-            }
-
-            .nav-links a {
-                font-size: 0.8rem;
-            }
-
-            .input-component {
-                width: 90%;
-                margin-top: 5vh;
-            }
-
-            #pill-container {
-                width: 100%;
-            }
-
-            #pill-input {
-                height: 50px;
-                font-size: 0.9rem;
-                border-top-left-radius: 20px;
-                border-bottom-left-radius: 20px;
-                padding-left: 15px;
-                padding-right: 10px;
-            }
-
-            #pill-button {
-                height: 60px;
-                font-size: 0.9rem;
-                padding: 0 15px;
-                border-top-right-radius: 20px;
-                border-bottom-right-radius: 20px;
-            }
-
-            .survey-text {
-                font-size: 0.8rem;
-            }
-
-            .survey-link {
-                font-size: 0.9rem;
-            }
         }
     </style>
 </head>
 
 <body>
-    <div class="header">
-        <img id="logo" src="logo_green_white.png" alt="Pao Labs Logo">
-        <div class="nav-links">
-            <a href="mailto:zack.yu@paolabs.com">CONTACT US</a>
-            <a href="https://www.instagram.com/paolabsjelly">INSTAGRAM</a>
+    <div class="desktop_container">
+        <img class="bg_image" src="pao_image.png">
+        <div class="right_content">
+            <div id="input">
+                <img id="logo" src="pao_labs_logo.png">
+                <h1 id="cta-text">Be the first to fuel with PAO &#x26A1;</h1>
+                <form id="input-container">
+                    <p id="description">Sign up for our email list for early access to our launch, plus exclusive updates on promotions and events!</p>
+                    <input type="email" id="email-input" placeholder="Enter your email" required>
+                    <button type="submit" id="submit-button">Submit</button>
+                </form>
+                <div class="social_media_icons">
+                    <a href="https://www.instagram.com/paolabsjelly"><img src="instagram.png" alt="instagram"></a>
+                    <a href="https://www.tiktok.com/@paolabsjelly"><img src="tiktok.png" alt="tiktok"></a>
+                    <a href="https://www.youtube.com/@paolabsjelly"><img src="youtube.png" alt="youtube"></a>
+                    <a href="mailto:zack.yu@paolabs.com"><img src="email_icon.png" alt="email"></a>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="input-component" id="input-component">
-        <h1 id="cta-text">Sign up for the latest news on our energy jellies and where we'll be sampling next!</h1>
-        <form id="pill-container">
-            <input type="email" id="pill-input" placeholder="Enter your email" required>
-            <button type="submit" id="pill-button">Sign Up</button>
+    <div class="mobile_container">
+        <img id="logo" src="pao_labs_logo.png">
+        <img class="bg_image" src="pao_image.png">
+        <h1 id="cta-text">Be the first to fuel with PAO &#x26A1;</h1>
+        <p id="description">Sign up for our email list for early access to our launch, plus exclusive updates on promotions and events!</p>
+        <form id="input-container">
+            <input type="email" id="email-input" placeholder="Enter your email" required>
+            <button type="submit" id="submit-button">Submit</button>
         </form>
-        <div class="survey-text">
-            Click below for our product survey if you've had the chance to sample our energy jelly!
-        </div>
-        <div class="survey-link">
-            <a href="https://forms.gle/PupA5w97UQ6uHFBFA">SURVEY</a>
+        <div class="social_media_icons">
+            <a href="https://www.instagram.com/paolabsjelly"><img src="instagram.png" alt="instagram"></a>
+            <a href="https://www.tiktok.com/@paolabsjelly"><img src="tiktok.png" alt="tiktok"></a>
+            <a href="https://www.youtube.com/@paolabsjelly"><img src="youtube.png" alt="youtube"></a>
+            <a href="mailto:zack.yu@paolabs.com"><img src="email_icon.png" alt="email"></a>
         </div>
     </div>
     <script>
-        document.getElementById('pill-container').addEventListener('submit', function (event) {
-            event.preventDefault();
+        document.addEventListener('DOMContentLoaded', function () {
+            // Select the correct form, input, and button based on which layout is visible
+            const desktopForm = document.querySelector('.desktop_container #input-container');
+            const mobileForm = document.querySelector('.mobile_container #input-container');
 
-            var emailInput = document.getElementById('pill-input');
-            var submitButton = document.getElementById('pill-button');
+            // Choose the correct form based on screen size
+            const activeForm = window.innerWidth <= 820 ? mobileForm : desktopForm;
+            const emailInput = activeForm.querySelector('#email-input');
+            const submitButton = activeForm.querySelector('#submit-button');
 
-            // Disable the input and button
-            emailInput.disabled = true;
-            submitButton.disabled = true;
-            submitButton.style.cursor = 'not-allowed';
+            if (activeForm) {
+                activeForm.addEventListener('submit', function (event) {
+                    event.preventDefault();
 
-            fetch('https://script.google.com/macros/s/AKfycbw0_3SFf7Ix9UAO6CJyA5eZPR-ueDRbs9RUY9S-sUsrD2BYgPILaXVoq_AwGA82mrztvw/exec', {
-                method: 'POST',
-                mode: 'no-cors',
-                body: JSON.stringify({ email: emailInput.value }),
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            })
-                .then(response => console.log(response))
-                .then(data => {
-                    document.getElementById('input-component').innerHTML = '<h1>Thank you for signing up! Stay tuned for exciting updates on our energy jellies and where you can try our samples next. We can\'t wait to share our journey with you!</h1>';
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                    // Re-enable the input and button if there is an error
-                    emailInput.disabled = false;
-                    submitButton.disabled = false;
-                    submitButton.style.cursor = 'pointer';
+                    if (!emailInput || !submitButton) {
+                        console.error("Email input or submit button not found.");
+                        return;
+                    }
+
+                    // Disable input and button
+                    emailInput.disabled = true;
+                    submitButton.disabled = true;
+                    submitButton.style.cursor = 'not-allowed';
+
+                    fetch('https://script.google.com/macros/s/AKfycbw0_3SFf7Ix9UAO6CJyA5eZPR-ueDRbs9RUY9S-sUsrD2BYgPILaXVoq_AwGA82mrztvw/exec', {
+                        method: 'POST',
+                        mode: 'no-cors',
+                        body: JSON.stringify({ email: emailInput.value }),
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    })
+                        .then(response => console.log(response))
+                        .then(() => {
+                            submitButton.textContent = 'Submitted';
+                            submitButton.style.backgroundColor = '#6EF78C';
+                        })
+                        .catch(error => {
+                            console.error('Error:', error);
+                            emailInput.disabled = false;
+                            submitButton.disabled = false;
+                            submitButton.style.cursor = 'pointer';
+                        });
                 });
+            } else {
+                console.error("No active form found.");
+            }
         });
     </script>
 </body>
